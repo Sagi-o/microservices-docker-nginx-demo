@@ -19,7 +19,7 @@ services:
         depends_on:
             - mongo
         volumes:
-            - "./docker_volume/service-a:/src/app"
+            - ./docker_volume/service-a:/src/app
         networks:
             - network_1
       
@@ -31,7 +31,7 @@ services:
         depends_on:
             - mongo
         volumes:
-            - "./docker_volume/service-b:/src/app"
+            - ./docker_volume/service-b:/src/app
         networks:
             - network_1
 
@@ -43,6 +43,10 @@ services:
         depends_on:
             - service-a
             - service-b
+        volumes:
+            - ./docker_volume/nginx/nginx:/etc/nginx/conf.d
+            - ./docker_volume/nginx/static:/static
+            - ./docker_volume/nginx/log:/var/log/nginx
         ports:
             - 80:80
         networks:
