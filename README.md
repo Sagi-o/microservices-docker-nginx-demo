@@ -3,5 +3,5 @@
 Run with:
 ``docker-compose up``
 
-If changed configuration run:
+If changed docker compose run:
 ``docker-compose down && docker-compose build``
