@@ -20,8 +20,6 @@ services:
             - mongo
         volumes:
             - "./docker_volume/service-a:/src/app"
-        ports:
-          - 3000:3000
         networks:
             - network_1
       
@@ -34,8 +32,6 @@ services:
             - mongo
         volumes:
             - "./docker_volume/service-b:/src/app"
-        ports:
-          - 3001:3000
         networks:
             - network_1
 
